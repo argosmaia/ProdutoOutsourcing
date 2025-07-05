@@ -4,6 +4,7 @@
 package modelos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,53 +27,13 @@ public abstract class Produto implements Comparable<Produto> {
 	 * @param marca
 	 * @param avaliacoes
 	 */
-	public Produto(String nome, String marca, List<Avaliacao> avaliacoes) {
+	public Produto(String nome, String marca) {
 		this.nome = nome;
 		this.marca = marca;
-		this.avaliacoes = avaliacoes;
 	}
 	
-	/**
-	 * @return the nome
-	 */
-	public String getNome() {
-		return nome;
-	}
-
-	/**
-	 * @param nome the nome to set
-	 */
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	/**
-	 * @return the marca
-	 */
-	public String getMarca() {
-		return marca;
-	}
-
-	/**
-	 * @param marca the marca to set
-	 */
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-	/**
-	 * @return the avaliacoes
-	 */
-	public List<Avaliacao> getAvaliacoes() {
-		return avaliacoes;
-	}
-
-	/**
-	 * @param avaliacoes the avaliacoes to set
-	 */
-	public void setAvaliacoes(List<Avaliacao> avaliacoes) {
-		this.avaliacoes = avaliacoes;
-	}
+	public String getNome() { return nome; }
+	public List<Avaliacao> getAvaliacoes() { return Collections.unmodifiableList(avaliacoes); }
 
 	public void adicionarAvaliacao(Avaliacao avaliacao) {
     	avaliacoes.add(avaliacao);
@@ -85,7 +46,7 @@ public abstract class Produto implements Comparable<Produto> {
             .orElse(0);
     }
 
-    public abstract String exibirDetalhes();
+    public abstract String exibirDetalhes(); // toString
 
     @Override
     public int compareTo(Produto outro) {
@@ -103,10 +64,4 @@ public abstract class Produto implements Comparable<Produto> {
     public int hashCode() {
         return Objects.hash(nome, marca);
     }
-
-	@Override
-	public String toString() {
-		return "Produto [nome=" + nome + ", marca=" + marca + ", avaliacoes=" + avaliacoes + "]";
-	}
-
 }

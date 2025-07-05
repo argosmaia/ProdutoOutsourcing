@@ -24,11 +24,10 @@ public class Usuario implements Moderacao {
 	 * @param status
 	 * @param avaliacoesFeita
 	 */
-	public Usuario(String nome, String email, StatusUsuario status, List<Avaliacao> avaliacoesFeita) {
+	public Usuario(String nome, String email) {
 		this.nome = nome;
 		this.email = email;
-		this.status = status;
-		this.avaliacoesFeita = avaliacoesFeita;
+		this.status = status.PENDENTE_APROVACAO;
 	}
 	/**
 	 * 
@@ -87,7 +86,7 @@ public class Usuario implements Moderacao {
 	
 	public void avaliarProduto(Produto produto, int nota, String texto) {
         Avaliacao a = new Avaliacao(nota, texto, this, produto);
-		avaliacoesFeitas.add(a);
+		avaliacoesFeita.add(a);
         produto.adicionarAvaliacao(a);
     }
 
@@ -102,7 +101,7 @@ public class Usuario implements Moderacao {
     }
 
     public List<Avaliacao> getAvaliacoesFeitas() {
-        return Collections.unmodifiableList(avaliacoesFeitas);
+        return Collections.unmodifiableList(avaliacoesFeita);
     }
 
     public String getNome() {
