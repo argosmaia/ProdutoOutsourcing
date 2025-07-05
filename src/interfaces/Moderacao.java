@@ -6,7 +6,7 @@ package interfaces;
 /**
  * 
  */
-public interface IModeravel {
+public interface Moderacao {
 	void aprovar();
 	void rejeitar();
 }
