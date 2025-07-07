@@ -9,6 +9,7 @@ Plataforma de avaliação de produtos eletrônicos (Celulares e Notebooks), dese
 ```
 ├── modelo/        // Classes de dominio (Usuario, Produto, Avaliacao, etc)
 ├── interfaces/    // Interface IModeravel
+├── enums/ // Enumerators do sistema
 ├── MainSimulada.java      // Execução automática
 ├── MainInterativa.java    // Execução com Scanner
 ```
@@ -22,7 +23,7 @@ Plataforma de avaliação de produtos eletrônicos (Celulares e Notebooks), dese
 
 ### Interface
 
-* `IModeravel`: define `aprovar()` e `rejeitar()` para entidades moderáveis
+* `Moderacao`: define `aprovar()` e `rejeitar()` para entidades moderáveis
 
 ### Classe Abstrata
 
@@ -88,5 +89,5 @@ Plataforma de avaliação de produtos eletrônicos (Celulares e Notebooks), dese
 ## 🔄 Polimorfismo e Interface
 
 * `Produto.exibirDetalhes()` é sobrescrito em `Celular` e `Notebook`
-* `IModeravel` é implementado por `Usuario` e `Avaliacao`
-* Chamadas polimórficas: `List<IModeravel>` moderadas em lote
+* `Moderacao` é implementado por `Usuario` e `Avaliacao`
+* Chamadas polimórficas: `List<Moderacao>` moderadas
