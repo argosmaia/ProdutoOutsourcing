@@ -38,13 +38,13 @@ Plataforma de avaliação de produtos eletrônicos (Celulares e Notebooks), dese
 
 * Pode avaliar produtos
 * Guarda suas próprias avaliações
-* Implementa `IModeravel`
+* Implementa `Moderacao`
 
 ### `Avaliacao`
 
 * Conecta um `Usuario` a um `Produto`
 * Possui nota, texto, status e data
-* Implementa `Comparable` e `IModeravel`
+* Implementa `Comparable` e `Moderacao`
 
 ### `Plataforma`
 
